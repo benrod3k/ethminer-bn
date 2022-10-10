@@ -196,7 +196,7 @@ static __constant uint2 const Keccak_f1600_RC[24] = {
 
 
 #define fnv(x, y)        ((x) * FNV_PRIME ^ (y))
-#define fnv_reduce(v)    fnv(fnv(fnv(v.x, v.y), v.z), v.w)
+#define fnv_reduce(v)    fnv(fnv(fnv(v.w, v.z), v.y), v.x)
 
 typedef union {
     uint uints[128 / sizeof(uint)];
